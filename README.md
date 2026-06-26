@@ -13,13 +13,13 @@ A Svelte web app intended as an iTunes-style music library and player.
 
 
 ## Features
-- Dark / Light Theme
-
-
 - Full support iTunes library export file
+- Once deploy, use every where
+- Multi-platform support
 - Library browsing, search and editing
 - Artists / albums / tracks views
 - Classical iTunes like playback LCD
+- Dark / Light Theme
 - Desktop / Mobile ui support
 <div align="center">  
 <p>
