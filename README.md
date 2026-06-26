@@ -50,6 +50,8 @@ A Svelte web app intended as an iTunes-style music library and player.
 - Node.js (v20)
 - npm / pnpm / yarn
 
+## Contacts
+- [discord](https://discord.gg/kedf3mu6X)
 ## Motivation
 - 2012 I use iTunes (windows) to manage music
 - 2019 I switch to macbook
