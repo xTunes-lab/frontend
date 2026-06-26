@@ -1,4 +1,4 @@
-# An iTunes Replacement Solution 
+# An iTunes Replacement Solution (in development)
 
 A Svelte web app intended as an iTunes-style music library and player.
 
