@@ -51,7 +51,7 @@ A Svelte web app intended as an iTunes-style music library and player.
 - npm / pnpm / yarn
 
 ## Motivation
-- 2012 I use iTunes (windows) for manage music
+- 2012 I use iTunes (windows) to manage music
 - 2019 I switch to macbook
 - 2022 I switch to linux, iTunes Mac os do not compatible with Windows). At that time I made a decision: one day, I will definitely build an iTunes replacement app
 - 2024 project start, I start to study svelte and tailwind, with the help of ChatGPT, I finally build the main part of iTunes replace app
