@@ -1,0 +1,16 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "css.lint.unknownAtRules": "ignore", // ignore | warning | error
+    "files.exclude": {
+        "tsconfig.json": true
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "tailwindCSS.includeLanguages": {
+        "svelte": "html"
+    }
+}
