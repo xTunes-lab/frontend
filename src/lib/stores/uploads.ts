@@ -1,4 +1,4 @@
-import { getAudioMetaInfo, searchAlbum, searchSong, uploadFileWithInfo } from "$lib/api";
+import { getAudioMetaInfo, searchAlbum, searchSong, uploadFileWithInfo, uploadiTunesXml } from "$lib/api";
 import type { iTunesSearchAlbumResult, iTunesSearchSongResult, SongInfo } from "$lib/entities";
 import { get, writable, type Writable } from "svelte/store";
 import { showWarn } from "./notification";
@@ -79,4 +79,12 @@ export function onImportItunesXml(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (!file) return;
     xmlFile.set(file);
+}
+
+export function importFromItunesXml() {
+    const xmlfile = get(xmlFile);
+    if (xmlfile) {
+        uploadiTunesXml(xmlfile);
+    }
+
 }

@@ -4,13 +4,9 @@
     import GainUnify from "$lib/components/pages/settings/GainUnify.svelte";
     import BackendAddress from "$lib/components/pages/settings/BackendAddress.svelte";
     import Language from "$lib/components/pages/settings/Language.svelte";
-    import { onMount } from "svelte";
-    import { config, loadSetting } from "$lib/stores/configs";
     import ReloadLibrary from "$lib/components/pages/settings/ReloadLibrary.svelte";
     import OrgnizeAudio from "$lib/components/pages/settings/OrgnizeAudio.svelte";
-    onMount(() => {
-        loadSetting();
-    });
+    import OfflineAudio from "$lib/components/pages/settings/OfflineAudio.svelte";
 </script>
 
 <ContentLayout>
@@ -24,6 +20,7 @@
                     <BackendAddress />
                     <LibraryPath />
                     <GainUnify />
+                    <!-- <OfflineAudio /> -->
                     <!-- <FileUpload /> -->
                     <ReloadLibrary />
                     <OrgnizeAudio />

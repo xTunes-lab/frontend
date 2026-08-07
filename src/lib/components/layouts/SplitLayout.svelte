@@ -1,14 +1,14 @@
 <script lang="ts">
     import { afterNavigate, beforeNavigate } from "$app/navigation";
     import {
-    backgroundStyle,
+        backgroundStyle,
         borderStyle,
         buttonStyle,
         fadeParams,
         mdWidth,
         modalBackground,
     } from "$lib/global";
-    import { isMobileMode, showLogin } from "$lib/stores/ui";
+    import { isMobileMode, onWindowResize, showLogin } from "$lib/stores/ui";
     import { onMount } from "svelte";
     import { ArrowLeftRight } from "svelte-bootstrap-icons";
     import type { Writable } from "svelte/store";
@@ -59,6 +59,7 @@
         }
     }
     onMount(() => {
+        onWindowResize();
         isClicked.subscribe(() => {
             if ($isMobileMode) {
                 onClick();

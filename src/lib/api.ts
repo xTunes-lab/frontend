@@ -7,7 +7,7 @@ import { get } from "svelte/store";
 import { albumPageData, allSong, artistPageData, genresPageData, homePageData, playListsPageData } from "./stores/pages";
 import { config } from "./stores/configs";
 import { NotificationType, OperationType } from "./stores/enums";
-import { showError, showInfo, showWarn } from "./stores/notification";
+import { showError, showWarn } from "./stores/notification";
 import * as songDB from "./stores/songDB";
 import { infoEditing, type SongCollectionInfo } from "./stores/property";
 import * as search from "./stores/search";
@@ -163,14 +163,19 @@ export async function setPlaylists() {
 /**
  * todo not implemented
  */
-export async function loadAudioToBlob(song: SongInfo): Promise<string> {
+export async function downloadAudio(song: SongInfo): Promise<any> {
     const response = await axios.get(get(config).musicStreamUrl, {
         params: { file_relative_path: song.file_path },
         withCredentials: false,
         responseType: 'blob'
     });
 
-    const blob = response.data;
+    const data = response.data;
+    return data;
+}
+
+export async function loadAudioToBlob(song: SongInfo): Promise<string> {
+    const blob = await downloadAudio(song);
     const objectUrl = URL.createObjectURL(blob);
     return objectUrl;
 }
@@ -209,6 +214,7 @@ export async function uploadiTunesXml(file: File) {
     form.append("file", file, file.name);
     await uploadForm(form, get(config).importFromiTunesUrl);
 }
+
 export async function uploadFileWithInfo(progressCallback?: CallableFunction) {
     const fileData = get(file);
     const resultData = get(selectedResult);

@@ -1,20 +1,24 @@
 import { goto } from "$app/navigation";
-import { initNotificationWebsocket, setAlbumPageData, setArtistPageData, setGenresPageData, setHomePageData, setLibraryPath, setPlaylists } from "$lib/api";
+import { initNotificationWebsocket, setAlbumPageData, setArtistPageData, setGenresPageData, setHomePageData, setLibraryPath, setPlaylists, uploadiTunesXml } from "$lib/api";
 import { get, writable } from "svelte/store";
-import { loadSetting } from "./configs";
+import { config, loadSetting } from "./configs";
+import { importFromItunesXml, xmlFile } from "./uploads";
 
 export const loading = writable(false);
 export const process = writable("init");
 export const isImportFromItunes = writable(true);
 
 
-export async function initLibrary() {
+export function initLibrary() {
     const option = get(isImportFromItunes);
-    if (option)
-    {
-        
+    if (option) {
+        importFromItunesXml();
     }
     reloadLibrary();
+    config.update((c) => {
+        c.initialized = true;
+        return c
+    })
     goto("/");
 }
 

@@ -7,12 +7,17 @@
     import { t } from "$locale/i18n";
     import { afterNavigate, beforeNavigate } from "$app/navigation";
     import { homePageScroll } from "$lib/stores/ui";
+    import { onMount } from "svelte";
+    import { loadSetting } from "$lib/stores/configs";
 
     beforeNavigate(() => {
         $homePageScroll = document.documentElement?.scrollTop;
     });
     afterNavigate(() => {
         document.documentElement!.scrollTop = $homePageScroll;
+    });
+    onMount(() => {
+        loadSetting();
     });
 </script>
 

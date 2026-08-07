@@ -10,6 +10,7 @@ export class Config {
     shuffleMode: boolean = false;
     gainUnify: boolean = false;
     theme: ThemeMode = ThemeMode.Light;
+    initialized: boolean = false;
     public get protocol(): string {
         if (typeof window !== "undefined" && window.location.protocol === "https:") {
             return "https";
@@ -32,7 +33,7 @@ export class Config {
         return `${this.protocol}://${this.serverAddress}/get_audio_meta_info`;
     }
     public get uploadAudio(): string {
-        return `${this.protocol}://${this.serverAddress}/upload_audio`;
+        return `${this.protocol}://${this.serverAddress}/add_song`;
     }
     public get allSongInfosUrl(): string {
         return `${this.protocol}://${this.serverAddress}/get_all_meta_info`
