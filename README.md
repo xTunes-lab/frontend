@@ -1,6 +1,7 @@
 # An iTunes Replacement Solution (in development)
 
 A Svelte web app intended as an iTunes-style music library and player.
+- [Demo](http://xtunes.xiaojiuwo.workers.dev)
 
 <div align="center">  
 <p>
